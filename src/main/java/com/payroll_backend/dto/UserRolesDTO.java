@@ -8,6 +8,8 @@ public record UserRolesDTO(
         UUID id,
         String name,
         String description,
+        UUID businessId,
+
         boolean defaultValue,
         LocalDateTime dateCreated,
         List<String> permissions

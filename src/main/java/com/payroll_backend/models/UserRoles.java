@@ -41,10 +41,15 @@ public class UserRoles {
 
     private boolean defaultValue;
 
+    @ManyToOne
+    @JoinColumn(name = "business_id")
+    private Business business;
+
     @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "modified_by")
     private AppUser modifiedBy;
+
     private LocalDateTime dateCreated;
     private LocalDateTime dateModified;
 
@@ -53,6 +58,7 @@ public class UserRoles {
                 this.id,
                 this.name,
                 this.description,
+                this.business.getId(),
                 this.defaultValue,
                 this.dateCreated,
                 Arrays.asList(this.permissions.split(","))
