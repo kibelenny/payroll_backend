@@ -28,8 +28,19 @@ public class ContactInformation {
     @Column(columnDefinition = "BINARY(16)")
     private UUID id;
 
+    @Column(length = 100)
+    private String name;
+
+    @Column(length = 100)
+    private String email;
+
     @Column(length = 13)
     private String phone;
+
+    @Column(length = 100)
+    private String type;
+
+    private String website;
 
     @Column(length = 100)
     private String code = "";

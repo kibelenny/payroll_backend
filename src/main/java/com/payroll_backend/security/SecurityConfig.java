@@ -41,7 +41,7 @@ public class SecurityConfig {
         http
                 .csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/login/**", "/register/**")
+                .requestMatchers("/v2/register/**", "/login/**")
                 .permitAll()
                 .and()
                 .authorizeHttpRequests()

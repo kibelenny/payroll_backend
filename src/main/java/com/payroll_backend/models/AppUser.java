@@ -34,14 +34,14 @@ public class AppUser extends Person implements UserDetails {
     private String description;
     private UUID deletedBy;
 
+    @ManyToOne
+    @JoinColumn(name = "business_id")
+    private Business business;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "role_id")
     private UserRoles role;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "contactInformation_id")
-    private List<ContactInformation> contactInformation;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "salary_id")
