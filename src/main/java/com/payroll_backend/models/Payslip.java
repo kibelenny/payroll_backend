@@ -1,5 +1,6 @@
 package com.payroll_backend.models;
 
+import com.payroll_backend.enums.PaymentMode;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
