@@ -39,13 +39,15 @@ public class AppUser extends Person implements UserDetails {
     @JoinColumn(name = "role_id")
     private UserRoles role;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "contactInformation_id")
+    private List<ContactInformation> contactInformation;
 
-
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "salary_id")
     private Salary salary;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "department_id")
     private Department department;
 
