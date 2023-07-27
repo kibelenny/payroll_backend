@@ -22,4 +22,7 @@ public class Department {
     @Column(columnDefinition = "BINARY(16)")
     private UUID departmentId;
     private String departmentName;
+    @Lob
+    private String details;
+
 }

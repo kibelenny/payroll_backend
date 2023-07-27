@@ -11,6 +11,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.*;
 
+/**
+ * AppUser is the employee
+ */
 @ToString
 @Getter
 @Setter
@@ -37,9 +40,14 @@ public class AppUser extends Person implements UserDetails {
     private UserRoles role;
 
 
+
     @ManyToOne
     @JoinColumn(name = "salary_id")
     private Salary salary;
+
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Department department;
 
     public AppUser(UUID id) {
         this.id = id;
